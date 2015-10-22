@@ -1,0 +1,25 @@
+/* Mobile Style Sheet for Atticus Finch Theme */
+
+@media (max-device-width: 800px) {
+
+body {
+		background: #fff;
+		color: red;
+}
+
+#container {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#sidebar {
+	float: none;
+}
+
+#sidebar,
+#content {
+	width: 100%;
+}
+
+}

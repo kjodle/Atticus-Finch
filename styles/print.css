@@ -1,0 +1,65 @@
+body > header,
+body > footer,
+#sidebar,
+a.post-edit-link,
+#post-series {
+	display: none;
+}
+
+html,
+body,
+#container,
+#content,
+.post,
+.page,
+.post-content {
+	max-width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+#content {
+	border: none;
+}
+
+#content p,
+#content ol,
+#content ul,
+#content li,
+#content dl,
+#content dd,
+#content dt {
+	font-size: 12pt;
+}
+
+.noprint {
+	display: none;
+}
+
+.printonly {
+	display: block;
+}
+
+.printcopyright,
+.printurl {
+	border: solid 1pt #000;
+	font-size: 8pt;
+	padding: 6pt;
+	width: 80%;
+	margin: 6pt auto;
+}
+
+.alignright {
+	float: right;
+	margin-left: 10px;
+}
+
+.alignleft {
+	float: left;
+	margin-right: 10px;
+}
+
+.aligncenter {
+	display: block;
+	margin: 0 auto;
+}

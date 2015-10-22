@@ -1,0 +1,800 @@
+/*
+Theme Name: Atticus Finch
+Theme URI: http://techblog.kjodle.net/
+Author: kjodle
+Author URI: http://d12webdesign.com/
+Description: Description
+Version: 0.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, gray, white, fixed-layout, two-columns, left-sidebar, custom-menu, featured-images, post-formats, theme-options, threaded-comments, translation-ready
+Text Domain: atticus-finch
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/**********************************/
+/* 
+ * 1. Simple Resets
+ * 2. Main Containers
+ * 3. Top Elements
+ * 4. #content Elements
+ * 5. .post Elements
+ * 6. Post Formats
+ * 7. Comments
+ * 8. Sidebar Elements
+ * 9. Footer Elements
+ * 10. Special Sections
+ * 11. Archive Pages
+ * 12. Action Hook Widget Areas
+ * 13. Social Media Menu
+ * 14. Required by WordPress
+ * 15. Miscellaneous Fixes
+ * 
+/**********************************/
+
+
+
+/**********************************/
+/* 1. Simple Resets               */
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: serif;
+}
+
+body {
+	color: #222;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+
+/**********************************/
+/* 2. Main Containers             */
+
+#container {
+	margin: 0px auto;
+	max-width: 1000px;
+	min-width: 700px;
+	width: 80%;
+}
+
+#sidebar {
+	border-right: solid 1px #999;
+	float: left;
+	padding-right: 2%;
+	text-align: right;
+	width: 22%;
+	margin-right: -1px;
+}
+
+#content {
+	border-left: solid 1px #999;
+	float: left;
+	padding: 0 2%;
+	width: 71%;
+	margin-bottom: 2em;
+}
+
+.page-template-page-no-sidebar #content {
+	border-left: none;
+	width: 80%;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+}
+
+body > footer {
+	clear: both;
+	width: 100%;
+}
+
+body > header {
+	border-bottom: solid 1px #444;
+	margin-bottom: 2em;
+}
+
+body > footer {
+	border-top: solid 1px #444;
+	margin-top: 2em;
+}
+
+
+/**********************************/
+/* 3. Top Elements                */
+
+#site-title {
+	position: relative;
+	clear: both;
+	width: 60%;
+	float: left;
+	font-family: "IM Fell English", serif;
+	padding: 24px 0 24px 30px;
+}
+
+#site-title h1,
+#site-title h2 {
+	font-size: 28px;
+	margin: 0;
+	padding: 0;
+	color: #555;
+}
+
+#site-title a {
+	text-decoration: none;
+	color: #555;
+}
+
+#site-desc {
+	position: relative;
+	width: 20%;
+	float: right;
+	padding: 1.8em 1em 1.8em 1em;
+	font-style: italic;
+	color: #555;
+}
+
+#site-desc h2,
+#site-desc h3 {
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+}
+
+nav#top-menu,
+nav#primary-menu {
+	background: #fafafa;
+	font-size: 14px;
+}
+
+li.menu-item a {
+	color: #444;
+	font-weight: bold;
+}
+
+.current-menu-item {
+	background: #ddd;
+}
+
+
+/**********************************/
+/* 4. #content Elements           */
+
+#content h2:first-child {
+	margin-top: 0;
+}
+
+
+/**********************************/
+/* 5. .post Elements              */
+
+.home .post,
+.archive .post {
+	border-top: solid 1px #888;
+	margin-top: 1.2em;
+	padding-top: 1.2em;
+}
+.home .post:first-child,
+.archive .post:first-child {
+	border-top: none;
+	padding-top: 0;
+	margin-top: 0;
+}
+.home .post:last-child,
+.archive .post:last-child {
+	border-bottom: solid 1px #888;
+}
+
+.post p {
+	font-size: 16px;
+	line-height: 1.4;
+}
+
+.post a {
+	text-decoration: none;
+	border-bottom: dotted 1px #ddd;
+	color: #448;
+	-webkit-transition: border-color 1s;
+	transition: border-color 1s;
+}
+.post.sticky a {
+	border-bottom: dotted 1px #efefef;
+	-webkit-transition: border-color 1s;
+	transition: border-color 1s;
+}
+.post a:hover {
+	border-color: #444;
+}
+
+.post-title {
+	font-size: 24px;
+	font-family: "IM Fell English", serif; */
+	margin: 0;
+}
+.post-title a {
+	color: #444;
+	border-bottom: dotted 1px #fff;
+	-webkit-transition: border-color 2s;
+	transition: border-color 2s;
+}
+.post-title a:hover {
+	border-color: #444;
+}
+
+.tags-links,
+.cat-links,
+.edit-link {
+	font-size: 12px;
+	margin-bottom: 3px;
+}
+
+.tags-links a,
+.cat-links a,
+.edit-link a {
+	text-decoration: none;
+	color: #444;
+}
+
+.entry-meta {
+	border-top: dotted 1px #ccc;
+	padding-top: 6px;
+	text-align: right;
+}
+.entry-meta a {
+	text-decoration: none;
+	color: #444;
+	}
+.entry-meta a:hover {
+	border-bottom: dotted 1px #999;
+}
+.entry-meta p {
+	margin: 0;
+	font-size: 13px;
+	}
+
+.edit-post {
+	float: right;
+	clear: both;
+	background: #fff;
+	margin: 0;
+}
+.edit-post a {
+	padding: 6px;
+	font-size: 10px;
+	text-decoration: none;
+	color: #555;
+	font-family: monospace;
+	display: block;
+}
+.edit-post a:hover {
+	background: #fee;
+}
+
+#post-meta {
+	border-top: solid 1px #bbb;
+	padding: 6px 0;
+	margin: 12px 0 0 0;
+	}
+.list-pub a,
+.list-cat a,
+.list-tags a {
+	text-decoration: none;
+	color: #444;
+	}
+.list-pub a:hover,
+.list-cat a:hover,
+.list-tags a:hover{
+	border-bottom: dotted 1px #444;
+	}
+.list-pub,
+.list-cat,
+.list-tags {
+	padding: 4px;
+	font-size: 14px;
+	}
+
+#post-series {
+	border-top: solid 1px #bbb;
+	border-bottom: solid 1px #bbb;
+	padding: 6px 9px;
+	margin: 0 0 12px 0;
+	font-size: 16px;
+	}
+#post-series a {
+	text-decoration: none;
+	color: #222;
+	padding: 6px 6px 4px 6px;
+	}
+#post-series p {
+	margin-bottom: 3px;
+	margin-top: 0;
+	font-size: 16px;
+	}
+.post-prev {
+	float: left;
+	display: inline-block;
+	}
+.post-next {
+	float: right;
+	display: inline-block;
+	text-align: right;
+	}
+.post-prev a,
+.post-next a {
+	transition: background 1s;
+}
+.post-prev a:hover,
+.post-next a:hover {
+	background: #eef;
+}
+
+
+/**********************************/
+/* 6. Post Formats                */
+
+.aside-meta { /* For aside, link, quote, status on front page */
+	font-size: 12px;
+	font-style: italic;
+	text-align: right;
+}
+
+.dashicons,
+.dashicons-before::before {
+	font-size: 24px;
+	margin-top: 1px;
+	margin-right: 4px;
+}
+.notitle {
+	font-size: 48px !important; /* Mark as important because of Font Awesome settings */
+	float: left;
+	color: #444;
+	margin-bottom: 0px;
+	padding-right: 14px;
+}
+.home .notitle {
+	font-size: 24px !important;
+}
+.notitle-h2 {
+	margin-bottom: 0;
+}
+a .dashicons-format-aside,
+a .dashicons-admin-links,
+a .dashicons-format-quote,
+a .dashicons-format-status {
+	text-decoration: none;
+	color: #444;
+}
+
+/* Chat Posts */
+.format-chat .post-content p{
+	background: #E9E9E9; /* The background color of first paragraph */
+	border-left: 7px solid #C9C9C9; /* The setting for border of first paragraph */
+	margin-bottom: 2px;
+	padding: 6px 0 6px 13px;
+	}
+.format-chat .post-content p:nth-child(odd) {
+	background: #F7F7F7; /* The background color of next paragraph */
+	border-left-color: #E0E0E0; /* The setting for border of next paragraph */
+	}
+
+div.post-content > p { /* Eliminate top margin on aside, link, quote, status if title is not displayed */
+	margin-top: 0;
+}
+
+/* Quote Posts */
+.format-quote .post-content p {
+	font-weight: bold;
+	font-size: 24px;
+	}
+.format-quote .post-content p:last-of-type {
+	font-weight: normal;
+	font-style: italic;
+	text-align: right;
+	font-size: 18px;
+	}
+
+
+/**********************************/
+/* 7. Comments                    */
+
+ol.comment-list {
+	padding-left: 0;
+}
+
+div.comment,
+div.pingback {
+	font-size: 14px;
+	margin: 6px 0px;
+	box-shadow: 2px 2px 2px 0 #eee;
+	color: #222;
+	padding: 0 0 10px 20px;
+	}
+
+
+/**********************************/
+/* 8. Sidebar elements            */
+
+#sidebar {
+	font-size: 13px;
+}
+
+#sidebar h2 {
+	font-size: 17px;
+	margin-bottom: 0.8em;
+	margin-top: 1.5em;
+}
+
+#sidebar h2:first-child {
+	margin-top: 0;
+}
+
+#sidebar ul {
+	margin: 0;
+	padding: 0;
+}
+
+#sidebar li {
+	list-style-type: none;
+	padding-top: 3px;
+	font-size: 13px;
+	border-top: solid 1px #ddd;
+	margin-bottom: 3px;
+}
+
+#sidebar li:last-child {
+	border-bottom: solid 1px #ddd;
+}
+
+#sidebar a {
+	text-decoration: none;
+	color: #444;
+	border-bottom: dotted 1px #fff;
+	transition: border-color 1s;
+	-webkit-transition: border-color 1s;
+}
+
+#sidebar a:hover {
+	border-bottom: dotted 1px #222;
+}
+
+#sidebar .screen-reader-text {
+	display: none;
+}
+
+#sidebar td,
+#sidebar table caption,
+#sidebar thead,
+#sidebar tfoot {
+	font-size: 13px;
+}
+
+
+/**********************************/
+/* 9. Footer Elements             */
+
+footer {
+	font-size: 13px;
+}
+
+footer a {
+	text-decoration: none;
+	color: #777;
+	border-bottom: dotted 1px #fff;
+	transition: border-color 1s;
+}
+footer a:hover {
+	border-color: #444;
+}
+
+#copyright,
+#credits {
+	margin: 10px;
+	padding: 6px;
+}
+
+#copyright {
+	float: left;
+	width: 40%;
+}
+
+#cc-button {
+	float: left;
+	padding: 0 4px 4px 0;
+}
+
+#credits {
+	float: right;
+	text-align: right;
+	width: 30%;
+}
+
+ul#footermenu {
+	list-style-type: none;
+	padding: 0;
+}
+
+ul#footermenu li {
+	display: block;
+	float: left;
+	padding: 2px 8px;
+	font-size: 16px;
+}
+
+ul#footermenu li ul {
+	padding-left: 8px;
+}
+
+ul#footermenu li ul li {
+	float: none;
+	font-size: 14px;
+	max-width: 120px;
+}
+
+ul#footermenu a {
+	padding: 2px;
+	border: none;
+	color: #444;
+	background: #fff;
+	display: inline-block;
+	transition: background 2s, color 2s;
+}
+ul#footermenu a:hover {
+	background: #444;
+	color: #fff;
+}
+
+
+/**********************************/
+/* 10. Special Sections           */
+
+#page-info {
+	border-bottom: solid 1px #fff;
+	padding: 3px 0;
+	transition: border-color 2s;
+}
+#page-info:hover {
+	border-color: #ddd;
+}
+#page-info p {
+	margin: 0 0 2px;
+	font-size: 13px;
+	font-style: italic;
+	text-align: right;
+}
+
+.clear {
+	clear: both;
+}
+
+.printonly {
+	display: none;
+}
+
+
+/**********************************/
+/* 11. Archive Pages              */
+
+#archive-title {
+	border: solid 1px #999;
+	background: #fff;
+	padding: 9px 12px;
+	margin: 0;
+	text-align: center;
+	color: #555;
+	}
+#posts-nav {
+	border-top: 1px solid #777;
+	margin: 2em 0.8em 0;
+	padding: 6px;
+	text-align: center;
+	font-size: 16px;
+	}
+#posts-nav a {
+	text-decoration: none;
+	color: #222;
+	}
+#posts-nav a:hover {
+	border-bottom: dotted 1px #444;
+}
+
+
+
+/**********************************/
+/* 12. Action Hook Widget Areas   */
+
+#atticus_finch_before_social_media,
+#atticus_finch_after_footer,
+#atticus_finch_footer_bottom {
+	clear: both;
+}
+
+/**********************************/
+/* 13. Social Media Menu          */
+
+#social-media-menu {
+	clear: both;
+	margin-bottom: 6px;
+	padding: 0 0 0 30px;
+	height: 60px;
+	max-height: 48px;
+}
+
+#social-media-menu a {
+	font-size: 32px;
+	color: #ddd;
+	padding-right: 6px;
+	vertical-align: text-top;
+	transition: color 2s, font-size 2s;
+}
+#social-media-menu a:hover {
+	font-size: 48px;
+	color: #444;
+}
+#social-media-menu a.sm-rss:hover {
+	color: #ff8300;
+}
+#social-media-menu a.sm-twitter:hover {
+	color: #4F9FDD;
+}
+#social-media-menu a.sm-facebook:hover {
+	color: #3A5795;
+}
+#social-media-menu a.sm-instagram:hover {
+	color: #9b6954;
+}
+#social-media-menu a.sm-youtube:hover {
+	color: #DF2826;
+}
+#social-media-menu a.sm-pinterest:hover {
+	color: #C92228;
+}
+#social-media-menu a.sm-amazon:hover {
+	color: #F3A847;
+}
+
+/**********************************/
+/* 14. Required by WordPress      */
+
+.size-auto, 
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
+
+.sticky {
+	background: #efefef;
+	padding: 0.5em;
+}
+.sticky:first-child .post-title,
+.post:first-child .post-title {
+	margin-top: 0;
+}
+.post:first-child h2 {
+	padding-top: 0;
+}
+.sticky:first-child h2 {
+	padding-top: 12px;
+}
+
+.wp-caption {
+	border: solid 1px #bbb;
+	padding: 6px;
+	background: #f9f9f9;
+	margin-bottom: 12px;
+}
+
+.wp-caption-text {
+	font-size: 12px;
+}
+
+.gallery-caption {
+	
+}
+
+.bypostauthor {
+	
+}
+
+.alignright {
+	float: right;
+	margin-left: 10px;
+}
+
+.alignleft {
+	float: left;
+	margin-right: 10px;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption a,
+.wp-caption a:hover {
+	border: none;
+	text-decoration: none;
+}
+
+.wp-post-image { /* Align images in excerpts */
+	float: left;
+	margin: 0 10px 8px 0;
+}
+
+
+/**********************************/
+/* 15. Miscellaneous Fixes        */
+
+table#wp-calendar {
+	width: 100%;
+	margin-top: 1.5em;
+}
+
+h2 table#wp-calendar {
+	margin-top: 0;
+}
+
+figure {
+	margin: 0;
+}
+
+/* Development */
+/* Delete when theme is complete */
+
+.post-content img { /*For images without a caption */
+	border: solid 1px #ddd;
+	padding: 12px;
+}
+
+.wp-caption img { /* For images with a caption */
+	border: none;
+	padding: 0;
+}
+
+.atticus-finch-post-top-widget {
+	text-align: right;
+}
+
+span.fa .fa-at {
+	font-weight: bold !important;
+}
+
+.format-quote .post-content iframe {
+	clear:both;
+	margin-top: 12px;
+	}
+
+blockquote {
+    border: solid 1px #ddd;
+    padding: 12px;
+}
+blockquote:before {
+    font-family: "FontAwesome";
+    content: '\f10d';
+    color: rgba( 50, 50, 50, 0.1);
+    font-size: 50px;
+    float: left;
+    margin-right: 12px;
+}
+
+blockquote.PWGP_caption::before {
+    /* border: none; */
+    content: none;
+}
+
+blockquote.PWGP_caption {
+    margin: 3px 0;
+    text-align: left;
+	border: none;
+}
