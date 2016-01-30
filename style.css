@@ -63,6 +63,8 @@ pre {
 	max-width: 1000px;
 	min-width: 700px;
 	width: 80%;
+	background: #ffffff;
+	padding: 20px;
 }
 
 #sidebar {
@@ -94,16 +96,16 @@ pre {
 body > footer {
 	clear: both;
 	width: 100%;
+	background: #ffffff;
 }
 
 body > header {
 	border-bottom: solid 1px #444;
-	margin-bottom: 2em;
+	background: #ffffff;
 }
 
 body > footer {
 	border-top: solid 1px #444;
-	margin-top: 2em;
 }
 
 
