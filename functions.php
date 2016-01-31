@@ -122,7 +122,9 @@ function atticus_finch_scripts() {
 
 	wp_enqueue_style( 'atticus-finch-googlefont', 'http://fonts.googleapis.com/css?family=IM+Fell+English:400,400italic', 'atticus-finch-style', '0.4', 'all' );
 
+if ( !wp_style_is( 'font-awesome.min.css', 'enqueued' ) ) {
 	wp_enqueue_style( 'atticus-finch-fa', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', 'atticus-finch-style', '0.4', 'all' );
+}
 
 	wp_enqueue_style( 'atticus-finch-mobile', get_stylesheet_directory_uri() . '/styles/mobile.css', 'atticus-finch-style', '0.4', 'handheld' );
 
