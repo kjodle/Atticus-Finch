@@ -521,29 +521,29 @@ footer a:hover {
 	width: 30%;
 }
 
-ul#footermenu {
+ul#footermenu-ul {
 	list-style-type: none;
 	padding: 0;
 }
 
-ul#footermenu li {
+ul#footermenu-ul li {
 	display: block;
 	float: left;
 	padding: 2px 8px;
 	font-size: 16px;
 }
 
-ul#footermenu li ul {
+ul#footermenu-ul li ul {
 	padding-left: 8px;
 }
 
-ul#footermenu li ul li {
+ul#footermenu-ul li ul li {
 	float: none;
 	font-size: 14px;
 	max-width: 120px;
 }
 
-ul#footermenu a {
+ul#footermenu-ul a {
 	padding: 2px;
 	border: none;
 	color: #444;
@@ -551,7 +551,7 @@ ul#footermenu a {
 	display: inline-block;
 	transition: background 2s, color 2s;
 }
-ul#footermenu a:hover {
+ul#footermenu-ul a:hover {
 	background: #444;
 	color: #fff;
 }

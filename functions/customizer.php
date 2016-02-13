@@ -328,7 +328,7 @@ $wp_customize->add_panel( 'atticusfinch', array(
 	$wp_customize->add_control( 'atticus_finch_after_footer', array(
 		'section'  => 'atticus_finch_widget_areas',
 		'type'     => 'checkbox',
-		'label'    => __( 'Before Footer', 'atticus-finch' ),
+		'label'    => __( 'After Footer', 'atticus-finch' ),
 	) );
 
 
@@ -574,19 +574,6 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	) );
 
 
-	$wp_customize->add_setting( 'atticus_finch_twitter2', array(
-		'type'              => 'theme_mod',
-		'transport'         => 'postMessage',
-		'sanitize'          => 'html',
-	) );
-
-	$wp_customize->add_control( 'atticus_finch_twitter2', array(
-		'section'           => 'atticus_finch_social_media',
-		'type'              => 'text',
-		'label'             => __( 'Enter second Twitter URL', 'atticus-finch'),
-	) );
-
-
 	$wp_customize->add_setting( 'atticus_finch_twitter', array(
 		'type'              => 'theme_mod',
 		'transport'         => 'postMessage',
@@ -597,6 +584,19 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 		'section'           => 'atticus_finch_social_media',
 		'type'              => 'text',
 		'label'             => __( 'Enter Twitter URL', 'atticus-finch'),
+	) );
+
+
+	$wp_customize->add_setting( 'atticus_finch_twitter2', array(
+		'type'              => 'theme_mod',
+		'transport'         => 'postMessage',
+		'sanitize'          => 'html',
+	) );
+
+	$wp_customize->add_control( 'atticus_finch_twitter2', array(
+		'section'           => 'atticus_finch_social_media',
+		'type'              => 'text',
+		'label'             => __( 'Enter second Twitter URL', 'atticus-finch'),
 	) );
 
 
@@ -665,6 +665,111 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	) );
 
 
+
+
+// Mobile Menu Options
+	$wp_customize->add_section( 'atticus_finch_mobile_menu_options', array(
+		'title'          => __( 'Mobile Menu Options', 'atticus-finch' ),
+		'capability'     => 'edit_theme_options',
+		'priority'       => 20,
+		'description'    => __('Menu settings for mobile appearance.', 'atticus-finch'),
+		'panel' => 'atticusfinch',
+	) );
+
+	// Top Menu Options
+	$wp_customize->add_setting( 'atticus_finch_top_menu_name', array(
+		'type'              => 'theme_mod',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'atticus_finch_sanitize_text',
+	) );
+
+	$wp_customize->add_control( 'atticus_finch_top_menu_name', array(
+		'section'  => 'atticus_finch_mobile_menu_options',
+		'type'     => 'text',
+		'label'    => __( 'Mobile display name for top menu', 'atticus-finch' ),
+	) );
+
+	$wp_customize->add_setting( 'atticus_finch_top_menu_type', array(
+		'type'              => 'theme_mod',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'atticus_finch_sanitize_mobile_menu_type',
+		'default'           => 'select',
+	) );
+
+	$wp_customize->add_control( 'atticus_finch_top_menu_type', array(
+		'section'  => 'atticus_finch_mobile_menu_options',
+		'type'     => 'select',
+		'choices'  => array(
+			'select' => 'Select Menu',
+			'dropdown' => 'Flat Menu',
+			'multitoggle' => 'Dropdown Menu',
+		),
+		'label'    => __( 'Display the top menu as', 'atticus-finch' ),
+	) );
+
+	// Main Menu Options
+	$wp_customize->add_setting( 'atticus_finch_main_menu_name', array(
+		'type'           => 'theme_mod',
+		'transport'      => 'postMessage',
+		'sanitize_callback' => 'atticus_finch_sanitize_text',
+	) );
+
+	$wp_customize->add_control( 'atticus_finch_main_menu_name', array(
+		'section'  => 'atticus_finch_mobile_menu_options',
+		'type'     => 'text',
+		'label'    => __( 'Mobile display name for main menu', 'atticus-finch' ),
+	) );
+
+	$wp_customize->add_setting( 'atticus_finch_main_menu_type', array(
+		'type'              => 'theme_mod',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'atticus_finch_sanitize_mobile_menu_type',
+		'default'           => 'select',
+	) );
+
+	$wp_customize->add_control( 'atticus_finch_main_menu_type', array(
+		'section'  => 'atticus_finch_mobile_menu_options',
+		'type'     => 'select',
+		'choices'  => array(
+			'select' => 'Select Menu',
+			'dropdown' => 'Flat Menu',
+			'multitoggle' => 'Dropdown Menu',
+		),
+		'label'    => __( 'Display the menu menu as', 'atticus-finch' ),
+	) );
+
+	// Footer Menu Options
+	$wp_customize->add_setting( 'atticus_finch_footer_menu_name', array(
+		'type'           => 'theme_mod',
+		'transport'      => 'postMessage',
+		'sanitize_callback' => 'atticus_finch_sanitize_text',
+	) );
+
+	$wp_customize->add_control( 'atticus_finch_footer_menu_name', array(
+		'section'  => 'atticus_finch_mobile_menu_options',
+		'type'     => 'text',
+		'label'    => __( 'Mobile display name for footer menu', 'atticus-finch' ),
+	) );
+
+	$wp_customize->add_setting( 'atticus_finch_footer_menu_type', array(
+		'type'              => 'theme_mod',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'atticus_finch_sanitize_mobile_menu_type',
+		'default'           => 'select',
+	) );
+
+	$wp_customize->add_control( 'atticus_finch_footer_menu_type', array(
+		'section'  => 'atticus_finch_mobile_menu_options',
+		'type'     => 'select',
+		'choices'  => array(
+			'select' => 'Select Menu',
+			'dropdown' => 'Flat Menu',
+			'multitoggle' => 'Dropdown Menu',
+		),
+		'label'    => __( 'Display the footer menu as', 'atticus-finch' ),
+	) );
+
+
 // Miscellaneous Options
 	$wp_customize->add_section( 'atticus_finch_misc', array(
 		'title'          => __( 'Miscellaneous Options', 'atticus-finch' ),
@@ -728,8 +833,27 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 		'label'     => __( 'Excerpt length in number of words (maximum = 100)', 'atticus-finch' ),
 	) );
 
+// Preview some of our options 
+if ( $wp_customize->is_preview() && ! is_admin() )
+	add_action( 'wp_footer', 'atticus_finch_customize_preview', 21);
 
+/*
+function themename_customize_preview() {
+    ?>
+    <script type="text/javascript">
+    ( function( $ ){
+    wp.customize('setting_name',function( value ) {
+        value.bind(function(to) {
+            $('.posttitle').css('color', to ? to : '' );
+        });
+    });
+    } )( jQuery )
+    </script>
+    <?php 
 }
+*/
+
+} // End register function
 
 
 // Sanitizer Functions
@@ -762,6 +886,21 @@ function atticus_finch_sanitize_html( $input ) {
 	);
 }
 
+function atticus_finch_sanitize_mobile_menu_type( $input ){
+	$valid = array(
+		'select' => 'Select Menu',
+		'dropdown' => 'Flat Menu',
+		'multitoggle' => 'Dropdown Menu',
+	);
+	if ( array_key_exists( $input, $valid ) ) {
+		return $input;
+	} else {
+		return '';
+	}
+}
+
 function atticus_finch_sanitize_css( $input ) {
-	wp_filter_nohtml_kses( $input );
+//	wp_filter_nohtml_kses( $input );
+	strip_tags( $input );
+	return $input;
 }
