@@ -39,6 +39,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /**********************************/
 /* 1. Simple Resets               */
 
+* {
+	box-sizing: border-box;
+}
+
 html,
 body {
 	margin: 0;
@@ -78,9 +82,9 @@ pre {
 
 #content {
 	border-left: solid 1px #999;
-	float: left;
+	float: right;
 	padding: 0 2%;
-	width: 71%;
+	width: 78%;
 	margin-bottom: 2em;
 }
 

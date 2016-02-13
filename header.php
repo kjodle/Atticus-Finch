@@ -31,8 +31,9 @@
 			'theme_location' => 'top-menu',
 			'fallback_cb'    => '',
 			'menu_class'     => 'sf-menu',
-			'menu_id'        => 'aboveheadermenu',
-			'container'      => 'false',
+			'menu_id'        => 'aboveheadermenu-ul',
+			'container'      => 'div',
+			'container_id'   => 'aboveheadermenu',
 			'depth'          => 1
 			) );
 		?>
@@ -82,8 +83,9 @@
 			'theme_location' => 'primary-menu',
 			'fallback_cb'    => '',
 			'menu_class'     => 'sf-menu',
-			'menu_id'        => 'belowheadermenu',
-			'container'      => 'false',
+			'menu_id'        => 'belowheadermenu-ul',
+			'container'      => 'div',
+			'container_id'   => 'belowheadermenu',
 			'depth'          => 3
 			) );
 		?>

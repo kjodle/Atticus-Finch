@@ -11,6 +11,8 @@
 
 <?php do_action( 'atticus_finch_container_bottom' ); ?>
 
+<div class="clear"></div>
+
 </div><!-- end #container -->
 
 <footer>
@@ -22,8 +24,9 @@
 			'theme_location' => 'footer-menu',
 			'fallback_cb'    => '',
 			'menu_class'     => '',
-			'menu_id'        => 'footermenu',
-			'container'      => 'false',
+			'menu_id'        => 'footermenu-ul',
+			'container'      => 'div',
+			'container_id'   => 'footermenu',
 			'depth'          => 4
 			) );
 		?>

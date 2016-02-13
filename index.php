@@ -15,8 +15,6 @@ get_header();
 
 ?>
 
-<?php get_sidebar(); ?>
-
 <div id="content">
 
 <!-- Start the loop -->
@@ -31,5 +29,7 @@ get_header();
 
 <?php atticus_finch_display_nav(); ?>
 </div> <!-- end Content -->
+
+<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
