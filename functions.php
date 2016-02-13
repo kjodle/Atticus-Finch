@@ -134,7 +134,7 @@ if ( !wp_style_is( 'font-awesome.min.css', 'enqueued' ) ) {
 
 	wp_enqueue_script( 'atticus-finch-navigation', get_template_directory_uri() . '/js/superfish.js', array(), '0.4', true );
 
-	wp_enqueue_script( 'atticus-finch-mobile-menus', get_template_directory_uri() . '/js/menumaker.min.js', array(), '0.4', true );
+	wp_enqueue_script( 'atticus-finch-mobile-menus', get_template_directory_uri() . '/js/menumaker.js', array('jquery'), '0.4', true );
 
 	wp_enqueue_script( 'atticus-finch-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '0.4', true );
 
