@@ -707,6 +707,19 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 		'label'    => __( 'Display the top menu as', 'atticus-finch' ),
 	) );
 
+	$wp_customize->add_setting( 'atticus_finch_top_menu_breakpoint', array(
+		'type'              => 'theme_mod',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'atticus_finch_sanitize_int',
+		'default'           => 640,
+	) );
+
+	$wp_customize->add_control( 'atticus_finch_top_menu_breakpoint', array(
+		'section'  => 'atticus_finch_mobile_menu_options',
+		'type'     => 'integer',
+		'label'    => __( 'Breakpoint to display top menu as mobile', 'atticus-finch' ),
+	) );
+
 	// Main Menu Options
 	$wp_customize->add_setting( 'atticus_finch_main_menu_name', array(
 		'type'           => 'theme_mod',
@@ -738,6 +751,19 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 		'label'    => __( 'Display the menu menu as', 'atticus-finch' ),
 	) );
 
+	$wp_customize->add_setting( 'atticus_finch_main_menu_breakpoint', array(
+		'type'              => 'theme_mod',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'atticus_finch_sanitize_int',
+		'default'           => 640,
+	) );
+
+	$wp_customize->add_control( 'atticus_finch_main_menu_breakpoint', array(
+		'section'  => 'atticus_finch_mobile_menu_options',
+		'type'     => 'integer',
+		'label'    => __( 'Breakpoint to display main menu as mobile', 'atticus-finch' ),
+	) );
+
 	// Footer Menu Options
 	$wp_customize->add_setting( 'atticus_finch_footer_menu_name', array(
 		'type'           => 'theme_mod',
@@ -767,6 +793,19 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 			'multitoggle' => 'Dropdown Menu',
 		),
 		'label'    => __( 'Display the footer menu as', 'atticus-finch' ),
+	) );
+
+	$wp_customize->add_setting( 'atticus_finch_footer_menu_breakpoint', array(
+		'type'              => 'theme_mod',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'atticus_finch_sanitize_int',
+		'default'           => 640,
+	) );
+
+	$wp_customize->add_control( 'atticus_finch_footer_menu_breakpoint', array(
+		'section'  => 'atticus_finch_mobile_menu_options',
+		'type'     => 'integer',
+		'label'    => __( 'Breakpoint to display footer menu as mobile', 'atticus-finch' ),
 	) );
 
 
@@ -834,10 +873,10 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	) );
 
 // Preview some of our options 
+/*
 if ( $wp_customize->is_preview() && ! is_admin() )
 	add_action( 'wp_footer', 'atticus_finch_customize_preview', 21);
 
-/*
 function themename_customize_preview() {
     ?>
     <script type="text/javascript">
@@ -896,6 +935,12 @@ function atticus_finch_sanitize_mobile_menu_type( $input ){
 		return $input;
 	} else {
 		return '';
+	}
+}
+
+function atticus_finch_sanitize_int( $input ){
+	if( is_numeric( $input) ) {
+		return intval( $input );
 	}
 }
 
