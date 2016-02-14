@@ -1,3 +1,12 @@
+/* All Menus */
+
+.current-menu-item {
+	background: #ddd;
+}
+
+
+/* Above Header Menu */
+
 #aboveheadermenu,
 #aboveheadermenu ul,
 #aboveheadermenu ul li,
@@ -29,7 +38,7 @@
 #aboveheadermenu {
 	font-family: "IM Fell English", serif;
 	background: #fff;
-	border-bottom: solid 1px #333;
+	border-bottom: solid 1px #ddd;
 }
 #aboveheadermenu > ul > li {
   float: left;
@@ -49,8 +58,8 @@
   float: right;
 }
 #aboveheadermenu > ul > li > a {
-  padding: 17px;
-  font-size: 12px;
+	padding: 0.5em;
+	font-size: 0.9em;
   letter-spacing: 1px;
   text-decoration: none;
   color: #333;
@@ -347,6 +356,8 @@
 }
 
 
+/* Below Header Menu */
+
 #belowheadermenu,
 #belowheadermenu ul,
 #belowheadermenu ul li,
@@ -406,7 +417,8 @@
   font-weight: 700;
 }
 #belowheadermenu > ul > li:hover > a {
-  color: #ffffff;
+	background: #333;
+	color: #ddd;
 }
 #belowheadermenu > ul > li.has-sub > a {
   padding-right: 30px;
@@ -692,6 +704,11 @@
 }
 
 
+/* Footer Menu */
+
+#footermenu li.current-menu-item a {
+	color: #333;
+}
 
 #footermenu,
 #footermenu ul,

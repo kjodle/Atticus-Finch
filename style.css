@@ -160,15 +160,6 @@ nav#primary-menu {
 	font-size: 14px;
 }
 
-li.menu-item a {
-	color: #444;
-	font-weight: bold;
-}
-
-.current-menu-item {
-	background: #ddd;
-}
-
 
 /**********************************/
 /* 4. #content Elements           */
@@ -519,10 +510,6 @@ footer a:hover {
 	float: right;
 	text-align: right;
 	width: 30%;
-}
-
-nav#footer-menu {
-	padding: 1em;
 }
 
 ul#footermenu-ul {

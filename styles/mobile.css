@@ -6,7 +6,7 @@
 
 body {
 		background: #fff;
-		color: blue;
+		color: green;
 }
 
 body > header {
@@ -49,7 +49,7 @@ body > header {
 	color: #fff;
 }
 
-body > footer{
+body > footer {
 	background: #333;
 	color: #fff;
 }
