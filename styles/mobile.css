@@ -9,6 +9,11 @@ body {
 		color: blue;
 }
 
+body > header {
+	background: #333;
+	color: #fff;
+}
+
 #container {
 	width: 100%;
 	max-width: auto;
@@ -29,10 +34,36 @@ body {
 }
 
 #site-title,
-#site-desc {
+#site-desc,
+#social-media-menu {
 	float: none;
 	width: 100%;
 	padding: 0.5em;
+	text-align: center;
+}
+
+#site-title h1,
+#site-title a,
+#site-desc,
+#site-desc a {
+	color: #fff;
+}
+
+body > footer{
+	background: #333;
+	color: #fff;
+}
+
+#footer-menu {
+	padding: 1em;
+}
+
+#copyright,
+#credits {
+	float: none;
+	padding: 0.5em;
+	width: auto;
+	text-align: center;
 }
 
 
