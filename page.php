@@ -15,8 +15,6 @@ get_header();
 
 ?>
 
-<?php get_sidebar(); ?>
-
 <div id="content">
 
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -43,6 +41,9 @@ get_header();
 </div><!-- end Post -->
 
 </div><!-- end Content -->
+
+<?php get_sidebar(); ?>
+
 <div class="clear"></div>
 
 <?php get_footer(); ?>

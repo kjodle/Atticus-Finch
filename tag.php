@@ -11,8 +11,6 @@ get_header();
 
 ?>
 
-<?php get_sidebar(); ?>
-
 <div id="content">
 
 <div id="archive-title">
@@ -38,6 +36,9 @@ get_header();
 
 <?php atticus_finch_display_nav(); ?>
 </div> <!-- end Content -->
+
+<?php get_sidebar(); ?>
+
 <div class="clear"></div>
 
 <?php get_footer(); ?>

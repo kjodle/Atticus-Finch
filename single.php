@@ -9,8 +9,6 @@ get_header();
 
 ?>
 
-<?php get_sidebar(); ?>
-
 <div id="content">
 
 <article>
@@ -27,6 +25,8 @@ get_header();
 </article>
 
 </div> <!-- end Content -->
+
+<?php get_sidebar(); ?>
 
 <div class="clear"></div>
 
