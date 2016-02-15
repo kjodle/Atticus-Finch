@@ -39,6 +39,7 @@
 	font-family: "IM Fell English", serif;
 	background: #fff;
 	border-bottom: solid 1px #ddd;
+	border-top: solid 1px #ddd;
 }
 #aboveheadermenu > ul > li {
   float: left;
