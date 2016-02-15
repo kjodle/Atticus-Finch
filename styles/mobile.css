@@ -14,6 +14,11 @@ body > header {
 	color: #fff;
 }
 
+textarea {
+	width: auto;
+	max-width: 100%;
+}
+
 #container {
 	width: 100%;
 	max-width: auto;
@@ -52,6 +57,7 @@ body > header {
 body > footer {
 	background: #333;
 	color: #fff;
+	padding-bottom: 2em;
 }
 
 #footer-menu {
@@ -64,8 +70,21 @@ body > footer {
 	padding: 0.5em;
 	width: auto;
 	text-align: center;
+	margin-bottom: 0;
 }
 
 
-/* Menumaker
-   Adjust as needed */
+/* Mobile Menu Adjustments */
+
+#aboveheadermenu {
+	border-bottom: none;
+}
+
+#footer-menu {
+	border-bottom: solid 1px #555;
+}
+/*
+#footermenu li.current-menu-item a {
+	color: #333;
+}
+*/

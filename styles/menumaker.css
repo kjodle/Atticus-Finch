@@ -353,6 +353,7 @@
 }
 #aboveheadermenu.small-screen.select-list {
   padding: 5px;
+	background: #333;
 }
 
 
@@ -430,7 +431,7 @@
   width: 8px;
   height: 2px;
   display: block;
-  background: #dddddd;
+	background: #333;
   content: '';
 }
 #belowheadermenu > ul > li.has-sub > a:before {
@@ -440,13 +441,17 @@
   display: block;
   width: 2px;
   height: 8px;
-  background: #dddddd;
+	background: #333;
   content: '';
   -webkit-transition: all .25s ease;
   -moz-transition: all .25s ease;
   -ms-transition: all .25s ease;
   -o-transition: all .25s ease;
   transition: all .25s ease;
+}
+#belowheadermenu > ul > li.has-sub:hover > a:after,
+#belowheadermenu > ul > li.has-sub:hover > a:before {
+	background: #ddd;
 }
 #belowheadermenu > ul > li.has-sub:hover > a:before {
   top: 23px;
@@ -705,6 +710,7 @@
 
 
 /* Footer Menu */
+/* Mobile menu items moved to mobile.css */
 
 #footermenu li.current-menu-item a {
 	color: #333;
@@ -739,7 +745,7 @@
   display: none;
 }
 #footermenu {
-	font-family: "IM Fell English", serif;
+  font-family: 'IM Fell English', sans-serif;
   background: #333333;
 }
 #footermenu > ul > li {
