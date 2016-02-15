@@ -118,23 +118,19 @@ add_action( 'widgets_init', 'atticus_finch_widgets_init' );
  * Enqueue scripts and styles.
  */
 function atticus_finch_scripts() {
-	wp_enqueue_style( 'atticus-finch-googlefont', 'http://fonts.googleapis.com/css?family=IM+Fell+English:400,400italic', 'atticus-finch-style', '0.4', 'all' );
+	wp_enqueue_style( 'atticus-finch-googlefont', 'https://fonts.googleapis.com/css?family=IM+Fell+English:400,400italic', 'atticus-finch-style', '0.4', 'all' );
 
 if ( !wp_style_is( 'font-awesome.min.css', 'enqueued' ) ) {
-	wp_enqueue_style( 'atticus-finch-fa', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', 'atticus-finch-style', '0.4', 'all' );
+	wp_enqueue_style( 'atticus-finch-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', 'atticus-finch-style', '0.4', 'all' );
 }
 
 	wp_enqueue_style( 'atticus-finch-style', get_stylesheet_uri( 'atticus-finch-navigation' ), array (), '0.4', 'screen' );
 
+	wp_enqueue_style( 'atticus-finch-menu-style', get_template_directory_uri() . '/styles/menumaker.css', 'atticus-finch-style', '0.4', 'screen' );
+
 	wp_enqueue_style( 'atticus-finch-mobile', get_stylesheet_directory_uri() . '/styles/mobile.css', 'atticus-finch-style', '0.4', 'screen and (max-width: 640px)' );
 
 	wp_enqueue_style( 'atticus-finch-print', get_stylesheet_directory_uri() . '/styles/print.css', 'atticus-finch-style', '0.4', 'print' );
-
-//	wp_enqueue_style( 'atticus-finch-menu-style', get_template_directory_uri() . '/styles/superfish.css', 'atticus-finch-style', '0.4', 'screen' );
-
-//	wp_enqueue_script( 'atticus-finch-navigation', get_template_directory_uri() . '/js/superfish.js', array( 'jquery' ), '0.4', true );
-
-	wp_enqueue_style( 'atticus-finch-menu-style', get_template_directory_uri() . '/styles/menumaker.css', 'atticus-finch-style', '0.4', 'screen' );
 
 	wp_enqueue_script( 'atticus-finch-mobile-menus', get_template_directory_uri() . '/js/menumaker.js', array( 'jquery' ), '0.4', true );
 
