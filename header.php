@@ -78,6 +78,8 @@
 
 <?php do_action( 'atticus_finch_before_primary_menu' ); ?>
 
+<?php $walker = new Atticus_Finch_Menu_With_Description; ?>
+
 	<nav id="primary-menu">
 		<?php wp_nav_menu( array(
 			'theme_location' => 'primary-menu',
@@ -86,7 +88,8 @@
 			'menu_id'        => 'belowheadermenu-ul',
 			'container'      => 'div',
 			'container_id'   => 'belowheadermenu',
-			'depth'          => 3
+			'depth'          => 3,
+			'walker'         => $walker,
 			) );
 		?>
 		<div class="clear"></div>
