@@ -672,7 +672,7 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 		'title'          => __( 'Mobile Menu Options', 'atticus-finch' ),
 		'capability'     => 'edit_theme_options',
 		'priority'       => 110,
-		'description'    => __('Menu settings for mobile appearance.', 'atticus-finch'),
+		'description'    => __('Menu settings for mobile appearance. <b>Note:</b> The breakpoint settings will override the "mobile breakpoint" setting.', 'atticus-finch'),
 		'panel' => 'atticusfinch',
 	) );
 
@@ -815,6 +815,20 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 		'capability'     => 'edit_theme_options',
 		'priority'       => 100,
 		'panel'          => 'atticusfinch',
+		'description'    => 'Fine-tune your mobile appearance',
+	) );
+
+	$wp_customize->add_setting( 'atticus_finch_mobile_breakpoint', array(
+		'type'              => 'theme_mod',
+		'transport'         => 'postMessage',
+		'default'           => '640',
+		'sanitize_callback' => 'atticus_finch_sanitize_int',
+	) );
+
+	$wp_customize->add_control( 'atticus_finch_mobile_breakpoint', array(
+		'section'   => 'atticus_finch_mobile',
+		'type'      => 'text',
+		'label'     => __( 'Breakpoint to display mobile version of theme', 'atticus-finch' ),
 	) );
 
 	$wp_customize->add_setting( 'atticus_finch_post_top_link', array(

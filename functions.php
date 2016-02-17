@@ -128,7 +128,7 @@ if ( !wp_style_is( 'font-awesome.min.css', 'enqueued' ) ) {
 
 	wp_enqueue_style( 'atticus-finch-menu-style', get_template_directory_uri() . '/styles/menumaker.css', 'atticus-finch-style', '0.4', 'screen' );
 
-	wp_enqueue_style( 'atticus-finch-mobile', get_stylesheet_directory_uri() . '/styles/mobile.css', 'atticus-finch-style', '0.4', 'screen and (max-width: 640px)' );
+	wp_enqueue_style( 'atticus-finch-mobile', get_stylesheet_directory_uri() . '/styles/mobile.css', 'atticus-finch-style', '0.4', 'screen and (max-width: '. get_theme_mod( 'atticus_finch_mobile_breakpoint' ) . 'px)' );
 
 	wp_enqueue_style( 'atticus-finch-print', get_stylesheet_directory_uri() . '/styles/print.css', 'atticus-finch-style', '0.4', 'print' );
 
