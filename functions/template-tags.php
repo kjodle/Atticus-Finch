@@ -264,10 +264,10 @@ function atticus_finch_display_footer_credits() {
 
 // Custom CSS Option
 function atticus_finch_custom_css_head() {
-	$afcss = get_theme_mod( 'atticus_finch_custom_css' );
-//	if ( !empty( $afcss ) ) {
-	echo '<style type="text/css">/* Atticus Finch Custom CSS */' . $afcss . '</style>';
-//	}
+	$afcss = get_theme_mod( 'atticus_finch_ccss' );
+	if ( !empty( $afcss ) ) {
+	echo '<style type="text/css">/* Atticus Finch Custom CSS */' . "\n" . get_theme_mod( 'atticus_finch_ccss' ) . "\n" . '</style>';
+	}
 }
 
 
@@ -314,3 +314,24 @@ function atticus_finch_social_media_display() {
 
 }
 
+
+// Mobile Top Link Options
+function atticus_finch_footer_top_link() {
+	if ( get_theme_mod( 'atticus_finch_footer_top_link' ) == 1 ) {
+		echo '<a href="#" class="top-button">';
+		_e( 'Return to Top', 'atticus-finch' );
+		echo '</a>';
+	} else {
+		return;
+	}
+}
+
+function atticus_finch_post_top_link() {
+	if ( get_theme_mod( 'atticus_finch_post_top_link' ) == 1 ) {
+		echo '<a href="#" class="top-button">';
+		_e( 'Return to Top', 'atticus-finch' );
+		echo '</a>';
+	} else {
+		return;
+	}
+}

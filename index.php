@@ -30,6 +30,8 @@ get_header();
 <?php atticus_finch_display_nav(); ?>
 </div> <!-- end Content -->
 
+<?php atticus_finch_post_top_link(); ?>
+
 <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

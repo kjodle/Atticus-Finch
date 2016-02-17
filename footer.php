@@ -17,6 +17,8 @@
 
 <footer>
 
+<?php atticus_finch_footer_top_link(); ?>
+
 	<?php do_action( 'atticus_finch_before_footer_menu' ); ?>
 
 	<nav id="footer-menu">

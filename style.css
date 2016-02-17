@@ -173,6 +173,9 @@ p.sub { /* Style main menu descriptions */
 	margin-top: 0;
 }
 
+a.top-button {
+	display: none;
+}
 
 /**********************************/
 /* 5. .post Elements              */

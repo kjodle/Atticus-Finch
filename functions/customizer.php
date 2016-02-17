@@ -671,7 +671,7 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	$wp_customize->add_section( 'atticus_finch_mobile_menu_options', array(
 		'title'          => __( 'Mobile Menu Options', 'atticus-finch' ),
 		'capability'     => 'edit_theme_options',
-		'priority'       => 20,
+		'priority'       => 110,
 		'description'    => __('Menu settings for mobile appearance.', 'atticus-finch'),
 		'panel' => 'atticusfinch',
 	) );
@@ -809,11 +809,46 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	) );
 
 
+// Mobile Options Options
+	$wp_customize->add_section( 'atticus_finch_mobile', array(
+		'title'          => __( 'Mobile Options', 'atticus-finch' ),
+		'capability'     => 'edit_theme_options',
+		'priority'       => 100,
+		'panel'          => 'atticusfinch',
+	) );
+
+	$wp_customize->add_setting( 'atticus_finch_post_top_link', array(
+		'type'              => 'theme_mod',
+		'transport'         => 'postMessage',
+		'default'           => '0',
+		'sanitize_callback' => 'atticus_finch_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'atticus_finch_post_top_link', array(
+		'section'   => 'atticus_finch_mobile',
+		'type'      => 'checkbox',
+		'label'     => __( 'Display \'Return to Top\' link after post content', 'atticus-finch' ),
+	) );
+
+	$wp_customize->add_setting( 'atticus_finch_footer_top_link', array(
+		'type'              => 'theme_mod',
+		'transport'         => 'postMessage',
+		'default'           => '0',
+		'sanitize_callback' => 'atticus_finch_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'atticus_finch_footer_top_link', array(
+		'section'   => 'atticus_finch_mobile',
+		'type'      => 'checkbox',
+		'label'     => __( 'Display \'Return to Top\' link before footer content', 'atticus-finch' ),
+	) );
+
+
 // Miscellaneous Options
 	$wp_customize->add_section( 'atticus_finch_misc', array(
 		'title'          => __( 'Miscellaneous Options', 'atticus-finch' ),
 		'capability'     => 'edit_theme_options',
-		'priority'       => 100,
+		'priority'       => 200,
 		'panel'          => 'atticusfinch',
 	) );
 
