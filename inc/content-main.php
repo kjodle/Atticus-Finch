@@ -13,6 +13,8 @@
 
 	</div><!-- end post content -->
 
+	<?php atticus_finch_post_top_link(); ?>
+
 	<?php atticus_finch_link_pages(); ?>
 
 	<?php get_template_part( 'inc/content', 'entry-meta' ); ?>

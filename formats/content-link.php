@@ -18,5 +18,3 @@
 <?php } ?>
 
 <?php get_template_part( 'inc/content', 'excerpt' ); ?>
-
-<?php atticus_finch_post_top_link(); ?>

@@ -18,5 +18,3 @@
 	</h2>
 
 <?php get_template_part( 'inc/content', 'main' ); ?>
-
-<?php atticus_finch_post_top_link(); ?>
