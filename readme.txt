@@ -42,8 +42,7 @@ IM Fell English Font, Copyright 2016 Igino Marini
 License: SIL (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 Source: https://www.google.com/fonts/specimen/IM+Fell+English
 
-Superfish jQuery Menu Plugin, Copyright 2015 Joel Birch
-License: MIT (http://opensource.org/licenses/mit-license.html)
-Source: http://users.tpg.com.au/j_birch/plugins/superfish/
+jQuery Plugin Responsive Drop Down
+Source: https://github.com/cssmenumaker/jQuery-Plugin-Responsive-Drop-Down
 
 == Notes ==
