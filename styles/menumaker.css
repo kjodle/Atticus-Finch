@@ -412,7 +412,7 @@
 }
 #belowheadermenu > ul > li > a {
   padding: 17px;
-  font-size: 12px;
+  font-size: 1.1em;
   letter-spacing: 1px;
   text-decoration: none;
   color: #333;
@@ -495,7 +495,7 @@
   border-bottom: 1px solid rgba(150, 150, 150, 0.15);
   padding: 11px 15px;
   width: 170px;
-  font-size: 12px;
+  font-size: 1.1em;
   text-decoration: none;
   color: #dddddd;
   font-weight: 400;
@@ -583,6 +583,7 @@
 #belowheadermenu.small-screen ul ul li a {
   color: #dddddd;
   background: none;
+	font-size: 1.2em;
 }
 #belowheadermenu.small-screen ul ul li:hover > a,
 #belowheadermenu.small-screen ul ul li.active > a {
@@ -609,7 +610,7 @@
 	color: #eee;
 	background: #333;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 1.1em;
   font-weight: 700;
 }
 #belowheadermenu.small-screen #menu-button:after {
