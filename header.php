@@ -81,16 +81,30 @@
 <?php $walker = new Atticus_Finch_Menu_With_Description; ?>
 
 	<nav id="primary-menu">
-		<?php wp_nav_menu( array(
-			'theme_location' => 'primary-menu',
-			'fallback_cb'    => '',
-			'menu_class'     => 'sf-menu',
-			'menu_id'        => 'belowheadermenu-ul',
-			'container'      => 'div',
-			'container_id'   => 'belowheadermenu',
-			'depth'          => 3,
-			'walker'         => $walker,
-			) );
+		<?php
+			if ( get_theme_mod( 'atticus_finch_main_menu_desc' ) == 1 ) {
+				$array = array(
+				'theme_location' => 'primary-menu',
+				'fallback_cb'    => '',
+				'menu_class'     => 'sf-menu',
+				'menu_id'        => 'belowheadermenu-ul',
+				'container'      => 'div',
+				'container_id'   => 'belowheadermenu',
+				'depth'          => 3,
+				'walker'         => $walker,
+				);
+			} else {
+				$array = array(
+				'theme_location' => 'primary-menu',
+				'fallback_cb'    => '',
+				'menu_class'     => 'sf-menu',
+				'menu_id'        => 'belowheadermenu-ul',
+				'container'      => 'div',
+				'container_id'   => 'belowheadermenu',
+				'depth'          => 3,
+				);
+			}
+			wp_nav_menu( $array );
 		?>
 		<div class="clear"></div>
 	</nav>

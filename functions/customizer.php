@@ -921,6 +921,20 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 		'label'     => __( 'Excerpt length in number of words (maximum = 100)', 'atticus-finch' ),
 	) );
 
+
+	$wp_customize->add_setting( 'atticus_finch_main_menu_desc', array(
+		'type'              => 'theme_mod',
+		'transport'         => 'postMessage',
+		'default'           => '1',
+		'sanitize_callback' => 'atticus_finch_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'atticus_finch_main_menu_desc', array(
+		'section'   => 'atticus_finch_misc',
+		'type'      => 'checkbox',
+		'label'     => __( 'Show menu item descriptions in main menu', 'atticus-finch' ),
+	) );
+
 // Preview some of our options 
 /*
 if ( $wp_customize->is_preview() && ! is_admin() )
