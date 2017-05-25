@@ -1,14 +1,15 @@
 /*
 Theme Name: Atticus Finch
-Theme URI: http://techblog.kjodle.net/
+Theme URI: http://wiki.kjodle.net/Category:Atticus_Finch_Theme
 Author: kjodle
 Author URI: http://d12webdesign.com/
 Description: Description
-Version: 0.5
+Version: 0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, gray, white, fixed-layout, two-columns, left-sidebar, custom-menu, featured-images, post-formats, theme-options, threaded-comments, translation-ready
 Text Domain: atticus-finch
+Details URI: http://wiki.kjodle.net/Category:Atticus_Finch_Theme
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -41,6 +42,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 * {
 	box-sizing: border-box;
+	max-width: 100%;
 }
 
 html,
@@ -72,17 +74,16 @@ pre {
 }
 
 #sidebar {
-	border-right: solid 1px #999;
 	float: left;
-	padding-right: 2%;
+	padding-right: 6%;
 	text-align: right;
-	width: 22%;
+	width: 26%;
 }
 
 #content {
 	float: right;
 	padding: 0 2%;
-	width: 78%;
+	width: 74%;
 	margin-bottom: 2em;
 }
 
@@ -119,7 +120,6 @@ body > footer {
 	clear: both;
 	width: 60%;
 	float: left;
-	font-family: "IM Fell English", serif;
 	padding: 24px 0 24px 30px;
 }
 
@@ -142,7 +142,6 @@ body > footer {
 	float: right;
 	padding: 1.8em 1em 1.8em 1em;
 	font-style: italic;
-	font-family: "IM Fell English", serif;
 	color: #555;
 }
 
@@ -160,11 +159,9 @@ nav#primary-menu {
 }
 
 p.sub { /* Style main menu descriptions */
-	font-family: serif;
 	margin: 0.3em 0 0 0;
 	font-weight: normal;
 	font-style: italic;
-	font-family: "IM Fell English", serif;
 }
 
 
@@ -199,17 +196,18 @@ a.top-button {
 	border-bottom: solid 1px #888;
 }
 
-.post p {
-	font-size: 16px;
+.post p,
+.post li {
+	font-size: 1rem;
 	line-height: 1.4;
 }
 
 .post a {
 	text-decoration: none;
-	border-bottom: dotted 1px #ddd;
-	color: #448;
+	border-bottom: dotted 1px #222;
+	color: #222;
 	-webkit-transition: border-color 1s;
-	transition: border-color 1s;
+	transition: border-color 1s, color 1s;
 }
 .post.sticky a {
 	border-bottom: dotted 1px #efefef;
@@ -217,12 +215,12 @@ a.top-button {
 	transition: border-color 1s;
 }
 .post a:hover {
-	border-color: #444;
+	border-color: #eee;
+	color: #3437e5;
 }
 
 .post-title {
 	font-size: 24px;
-	font-family: "IM Fell English", serif; */
 	margin: 0;
 }
 .post-title a {
@@ -250,20 +248,20 @@ a.top-button {
 }
 
 .entry-meta {
-	border-top: dotted 1px #ccc;
 	padding-top: 6px;
 	text-align: right;
 }
 .entry-meta a {
 	text-decoration: none;
 	color: #444;
+	border-bottom: dotted 1px #fff;
 	}
 .entry-meta a:hover {
 	border-bottom: dotted 1px #999;
 }
 .entry-meta p {
 	margin: 0;
-	font-size: 13px;
+	font-size: 0.8em;
 	}
 
 .edit-post {
@@ -449,14 +447,8 @@ div.pingback {
 
 #sidebar li {
 	list-style-type: none;
-	padding-top: 3px;
-	font-size: 13px;
-	border-top: solid 1px #ddd;
-	margin-bottom: 3px;
-}
-
-#sidebar li:last-child {
-	border-bottom: solid 1px #ddd;
+	padding-bottom: 0.6em;
+	font-size: 0.8rem;
 }
 
 #sidebar a {
@@ -790,7 +782,7 @@ blockquote {
 blockquote:before {
     font-family: "FontAwesome";
     content: '\f10d';
-    color: rgba( 50, 50, 50, 0.1);
+    color: rgba( 50, 50, 50, 0.3);
     font-size: 50px;
     float: left;
     margin-right: 12px;

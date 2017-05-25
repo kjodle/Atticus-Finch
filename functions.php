@@ -118,23 +118,23 @@ add_action( 'widgets_init', 'atticus_finch_widgets_init' );
  * Enqueue scripts and styles.
  */
 function atticus_finch_scripts() {
-	wp_enqueue_style( 'atticus-finch-googlefont', 'https://fonts.googleapis.com/css?family=IM+Fell+English:400,400italic', 'atticus-finch-style', '0.4', 'all' );
+	wp_enqueue_style( 'atticus-finch-googlefont', 'https://fonts.googleapis.com/css?family=IM+Fell+English:400,400italic', 'atticus-finch-style', '0.5', 'all' );
 
 if ( !wp_style_is( 'font-awesome.min.css', 'enqueued' ) ) {
-	wp_enqueue_style( 'atticus-finch-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 'atticus-finch-style', '0.4', 'all' );
+	wp_enqueue_style( 'atticus-finch-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 'atticus-finch-style', '0.5', 'all' );
 }
 
-	wp_enqueue_style( 'atticus-finch-style', get_stylesheet_uri( 'atticus-finch-navigation' ), array (), '0.4', 'screen' );
+	wp_enqueue_style( 'atticus-finch-style', get_stylesheet_uri( 'atticus-finch-navigation' ), array (), '0.5', 'screen' );
 
-	wp_enqueue_style( 'atticus-finch-menu-style', get_template_directory_uri() . '/styles/menumaker.css', 'atticus-finch-style', '0.4', 'screen' );
+	wp_enqueue_style( 'atticus-finch-menu-style', get_template_directory_uri() . '/styles/menus.css', 'atticus-finch-style', '0.5', 'screen' );
 
-	wp_enqueue_style( 'atticus-finch-mobile', get_stylesheet_directory_uri() . '/styles/mobile.css', 'atticus-finch-style', '0.4', 'screen and (max-width: '. get_theme_mod( 'atticus_finch_mobile_breakpoint' ) . 'px)' );
+	wp_enqueue_style( 'atticus-finch-mobile', get_stylesheet_directory_uri() . '/styles/mobile.css', 'atticus-finch-style', '0.5', 'screen and (max-width: '. get_theme_mod( 'atticus_finch_mobile_breakpoint' ) . 'px)' );
 
-	wp_enqueue_style( 'atticus-finch-print', get_stylesheet_directory_uri() . '/styles/print.css', 'atticus-finch-style', '0.4', 'print' );
+	wp_enqueue_style( 'atticus-finch-print', get_stylesheet_directory_uri() . '/styles/print.css', 'atticus-finch-style', '0.5', 'print' );
 
-	wp_enqueue_script( 'atticus-finch-mobile-menus', get_template_directory_uri() . '/js/menumaker.js', array( 'jquery' ), '0.4', true );
+	wp_enqueue_script( 'atticus-finch-mobile-menus', get_template_directory_uri() . '/js/menumaker.js', array( 'jquery' ), '0.5', true );
 
-	wp_enqueue_script( 'atticus-finch-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '0.4', true );
+	wp_enqueue_script( 'atticus-finch-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '0.5', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -146,7 +146,7 @@ add_action( 'wp_enqueue_scripts', 'atticus_finch_scripts' );
  * Enable live changes in the customizer
  */
 function atticus_finch_customizer_script() {
-	wp_enqueue_script( 'atticus-finch-theme-customizer', get_template_directory_uri() . '/js/customizer.js', array(), '0.4', true );
+	wp_enqueue_script( 'atticus-finch-theme-customizer', get_template_directory_uri() . '/js/customizer.js', array(), '0.5', true );
 }
 add_action( 'customize_preview_init', 'atticus_finch_customizer_script' );
 
@@ -162,7 +162,7 @@ add_filter( 'excerpt_more', 'atticus_finch_excerpt_more' );
 
 // Add descriptions to main menu
 // http://www.wpbeginner.com/wp-themes/how-to-add-menu-descriptions-in-your-wordpress-themes/
-
+/*
 class Atticus_Finch_Menu_With_Description extends Walker_Nav_Menu {
 	function start_el(&$output, $item, $depth=0, $args = array(), $id=0) {
 		global $wp_query;
@@ -192,7 +192,7 @@ class Atticus_Finch_Menu_With_Description extends Walker_Nav_Menu {
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args, $id );
 	}
 }
-
+*/
 /**
  * Implement the Custom Header feature.
  */
@@ -222,3 +222,12 @@ require get_template_directory() . '/functions/widget-areas.php';
  * Make our menus mobile.
  */
 require get_template_directory() . '/functions/mobile-menus.php';
+
+
+// Include our update script to update from private repo
+require 'update/puc.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'http://api.kjodle.net/updates/atticus-finch.json',
+	__FILE__,
+	'atticus-finch'
+);
