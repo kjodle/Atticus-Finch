@@ -481,7 +481,7 @@ $wp_customize->add_panel( 'atticusfinch', array(
 	$wp_customize->add_setting( 'atticus_finch_copyright', array(
 		'type'           => 'theme_mod',
 		'transport'      => 'postMessage',
-		'sanitize'       => 'html',
+		'sanitize_callback'       => 'html',
 	) );
 
 $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" id="cc-button" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.';
@@ -499,7 +499,7 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 		'title'          => __( 'Custom CSS', 'atticus-finch' ),
 		'capability'     => 'edit_theme_options',
 		'priority'       => 60,
-		'description'    => __( 'Custom CSS is appended to the &lt;head&gt; of your document. If you need to enter more than a few lines, use a child theme.', 'atticus-finch' ),
+		'description'    => sprintf( wp_kses( __( 'The best way to alter your theme is via a child theme. Use <a href="%s" target="_blank">this link</a> to download a ready-made child theme.', 'atticus-finch' ), array(  'a' => array( 'href' => array(), 'target' => array() ) ) ), esc_url( 'https://github.com/kjodle/atticus-finch-child' ) ),
 		'panel'          => 'atticusfinch',
 	) );
 
@@ -512,9 +512,7 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 
 	$wp_customize->add_control( 'atticus_finch_ccss', array(
 		'section'  => 'atticus_finch_custom_css',
-		'default'  => '',
-		'type'     => 'textarea',
-		'label'    => __( 'Enter custom CSS here', 'atticus-finch' ),
+		'type'     => 'select',
 	) );
 
 
@@ -564,7 +562,7 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	$wp_customize->add_setting( 'atticus_finch_rss', array(
 		'type'               => 'theme_mod',
 		'transport'          => 'postMessage',
-		'sanintize_callback' => 'atticus_finch_sanitize_checkbox',
+		'sanitize_callback' => 'atticus_finch_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'atticus_finch_rss', array(
@@ -577,7 +575,7 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	$wp_customize->add_setting( 'atticus_finch_twitter', array(
 		'type'              => 'theme_mod',
 		'transport'         => 'postMessage',
-		'sanitize'          => 'html',
+		'sanitize_callback'          => 'html',
 	) );
 
 	$wp_customize->add_control( 'atticus_finch_twitter', array(
@@ -590,7 +588,7 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	$wp_customize->add_setting( 'atticus_finch_twitter2', array(
 		'type'              => 'theme_mod',
 		'transport'         => 'postMessage',
-		'sanitize'          => 'html',
+		'sanitize_callback'          => 'html',
 	) );
 
 	$wp_customize->add_control( 'atticus_finch_twitter2', array(
@@ -603,7 +601,7 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	$wp_customize->add_setting( 'atticus_finch_facebook', array(
 		'type'              => 'theme_mod',
 		'transport'         => 'postMessage',
-		'sanitize'          => 'html',
+		'sanitize_callback'          => 'html',
 	) );
 
 	$wp_customize->add_control( 'atticus_finch_facebook', array(
@@ -616,7 +614,7 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	$wp_customize->add_setting( 'atticus_finch_instagram', array(
 		'type'              => 'theme_mod',
 		'transport'         => 'postMessage',
-		'sanitize'          => 'html',
+		'sanitize_callback'          => 'html',
 	) );
 
 	$wp_customize->add_control( 'atticus_finch_instagram', array(
@@ -629,7 +627,7 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	$wp_customize->add_setting( 'atticus_finch_youtube', array(
 		'type'              => 'theme_mod',
 		'transport'         => 'postMessage',
-		'sanitize'          => 'html',
+		'sanitize_callback'          => 'html',
 	) );
 
 	$wp_customize->add_control( 'atticus_finch_youtube', array(
@@ -642,7 +640,7 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	$wp_customize->add_setting( 'atticus_finch_pinterest', array(
 		'type'              => 'theme_mod',
 		'transport'         => 'postMessage',
-		'sanitize'          => 'html',
+		'sanitize_callback'          => 'html',
 	) );
 
 	$wp_customize->add_control( 'atticus_finch_pinterest', array(
@@ -655,7 +653,7 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	$wp_customize->add_setting( 'atticus_finch_amazon', array(
 		'type'              => 'theme_mod',
 		'transport'         => 'postMessage',
-		'sanitize'          => 'html',
+		'sanitize_callback'          => 'html',
 	) );
 
 	$wp_customize->add_control( 'atticus_finch_amazon', array(
@@ -919,20 +917,6 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 		'section'   => 'atticus_finch_misc',
 		'type'      => 'text',
 		'label'     => __( 'Excerpt length in number of words (maximum = 100)', 'atticus-finch' ),
-	) );
-
-
-	$wp_customize->add_setting( 'atticus_finch_main_menu_desc', array(
-		'type'              => 'theme_mod',
-		'transport'         => 'postMessage',
-		'default'           => '1',
-		'sanitize_callback' => 'atticus_finch_sanitize_checkbox',
-	) );
-
-	$wp_customize->add_control( 'atticus_finch_main_menu_desc', array(
-		'section'   => 'atticus_finch_misc',
-		'type'      => 'checkbox',
-		'label'     => __( 'Show menu item descriptions in main menu', 'atticus-finch' ),
 	) );
 
 // Preview some of our options 
