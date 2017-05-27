@@ -4,10 +4,10 @@ Theme URI: http://wiki.kjodle.net/Category:Atticus_Finch_Theme
 Author: kjodle
 Author URI: http://d12webdesign.com/
 Description: Description
-Version: 0.6
+Version: 0.7.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, gray, white, fixed-layout, two-columns, left-sidebar, custom-menu, featured-images, post-formats, theme-options, threaded-comments, translation-ready
+Tags: two-columns, left-sidebar, custom-menu, featured-images, post-formats, theme-options, threaded-comments, translation-ready
 Text Domain: atticus-finch
 Details URI: http://wiki.kjodle.net/Category:Atticus_Finch_Theme
 
@@ -202,6 +202,10 @@ a.top-button {
 	line-height: 1.4;
 }
 
+.post li {
+	margin-bottom: 0.5rem;
+}
+
 .post a {
 	text-decoration: none;
 	border-bottom: dotted 1px #222;
@@ -226,11 +230,12 @@ a.top-button {
 .post-title a {
 	color: #444;
 	border-bottom: dotted 1px #fff;
-	-webkit-transition: border-color 2s;
-	transition: border-color 2s;
+	-webkit-transition: border-color 2s, color 2s;
+	transition: border-color 2s, color 2s;
 }
 .post-title a:hover {
-	border-color: #444;
+	border-color: #888;
+	color: #888;
 }
 
 .tags-links,
