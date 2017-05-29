@@ -118,23 +118,23 @@ add_action( 'widgets_init', 'atticus_finch_widgets_init' );
  * Enqueue scripts and styles.
  */
 function atticus_finch_scripts() {
-	wp_enqueue_style( 'atticus-finch-googlefont', 'https://fonts.googleapis.com/css?family=IM+Fell+English:400,400italic', 'atticus-finch-style', '0.5', 'all' );
+	wp_enqueue_style( 'atticus-finch-googlefont', 'https://fonts.googleapis.com/css?family=IM+Fell+English:400,400italic', 'atticus-finch-style', wp_get_theme() -> get( 'Version' ), 'all' );
 
 if ( !wp_style_is( 'font-awesome.min.css', 'enqueued' ) ) {
-	wp_enqueue_style( 'atticus-finch-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 'atticus-finch-style', '0.5', 'all' );
+	wp_enqueue_style( 'atticus-finch-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 'atticus-finch-style', wp_get_theme() -> get( 'Version' ), 'all' );
 }
 
-	wp_enqueue_style( 'atticus-finch-style', get_stylesheet_uri( 'atticus-finch-navigation' ), array (), '0.5', 'screen' );
+	wp_enqueue_style( 'atticus-finch-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'atticus-finch-menu-style', get_template_directory_uri() . '/styles/menus.css', 'atticus-finch-style', '0.5', 'screen' );
+	wp_enqueue_style( 'atticus-finch-menus', get_template_directory_uri() . '/styles/menus.css', array( 'atticus-finch-style' ), wp_get_theme() -> get( 'Version' ) );
 
-	wp_enqueue_style( 'atticus-finch-mobile', get_stylesheet_directory_uri() . '/styles/mobile.css', 'atticus-finch-style', '0.5', 'screen and (max-width: '. get_theme_mod( 'atticus_finch_mobile_breakpoint' ) . 'px)' );
+	wp_enqueue_style( 'atticus-finch-mobile', get_template_directory_uri() . '/styles/mobile.css', array( 'atticus-finch-style' ), wp_get_theme() -> get( 'Version' ), 'screen and (max-width: '. get_theme_mod( 'atticus_finch_mobile_breakpoint' ) . 'px)' );
 
-	wp_enqueue_style( 'atticus-finch-print', get_stylesheet_directory_uri() . '/styles/print.css', 'atticus-finch-style', '0.5', 'print' );
+	wp_enqueue_style( 'atticus-finch-print', get_template_directory_uri() . '/styles/print.css', array( 'atticus-finch-style' ), wp_get_theme() -> get( 'Version' ), 'print' );
 
-	wp_enqueue_script( 'atticus-finch-mobile-menus', get_template_directory_uri() . '/js/menumaker.js', array( 'jquery' ), '0.5', true );
+	wp_enqueue_script( 'atticus-finch-menumaker', get_template_directory_uri() . '/js/menumaker.js', array( 'jquery' ), wp_get_theme() -> get( 'Version' ), true );
 
-	wp_enqueue_script( 'atticus-finch-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '0.5', true );
+	wp_enqueue_script( 'atticus-finch-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), wp_get_theme() -> get( 'Version' ), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -146,7 +146,7 @@ add_action( 'wp_enqueue_scripts', 'atticus_finch_scripts' );
  * Enable live changes in the customizer
  */
 function atticus_finch_customizer_script() {
-	wp_enqueue_script( 'atticus-finch-theme-customizer', get_template_directory_uri() . '/js/customizer.js', array(), '0.5', true );
+	wp_enqueue_script( 'atticus-finch-theme-customizer', get_template_directory_uri() . '/js/customizer.js', array(), wp_get_theme() -> get( 'Version' ), true );
 }
 add_action( 'customize_preview_init', 'atticus_finch_customizer_script' );
 
@@ -227,7 +227,7 @@ require get_template_directory() . '/functions/mobile-menus.php';
 // Include our update script to update from private repo
 require 'update/puc.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'http://api.kjodle.net/updates/atticus-finch.json',
+	'http://api.kjodle.net/?action=get_metadata&slug=atticus-finch',
 	__FILE__,
 	'atticus-finch'
 );
