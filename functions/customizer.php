@@ -494,28 +494,6 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	) );
 
 
-// Custom CSS Information
-	$wp_customize->add_section( 'atticus_finch_custom_css', array(
-		'title'          => __( 'Custom CSS', 'atticus-finch' ),
-		'capability'     => 'edit_theme_options',
-		'priority'       => 60,
-		'description'    => sprintf( wp_kses( __( 'The best way to alter your theme is via a child theme. Use <a href="%s" target="_blank">this link</a> to download a ready-made child theme.', 'atticus-finch' ), array(  'a' => array( 'href' => array(), 'target' => array() ) ) ), esc_url( 'https://github.com/kjodle/atticus-finch-child' ) ),
-		'panel'          => 'atticusfinch',
-	) );
-
-	$wp_customize->add_setting( 'atticus_finch_ccss', array(
-		'type'           => 'theme_mod',
-		'transport'      => 'postMessage',
-		'sanitize_callback' => 'atticus_finch_sanitize_css',
-	) );
-
-
-	$wp_customize->add_control( 'atticus_finch_ccss', array(
-		'section'  => 'atticus_finch_custom_css',
-		'type'     => 'select',
-	) );
-
-
 // Print Options
 	$wp_customize->add_section( 'atticus_finch_print', array (
 		'title'          => __( 'Print Options', 'atticus-finch' ),
@@ -991,8 +969,3 @@ function atticus_finch_sanitize_int( $input ){
 	}
 }
 
-function atticus_finch_sanitize_css( $input ) {
-//	wp_filter_nohtml_kses( $input );
-	strip_tags( $input );
-	return $input;
-}
