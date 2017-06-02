@@ -553,12 +553,12 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	$wp_customize->add_setting( 'atticus_finch_twitter', array(
 		'type'              => 'theme_mod',
 		'transport'         => 'postMessage',
-		'sanitize_callback'          => 'html',
+		'sanitize_callback' => 'atticus_finch_sanitize_url',
 	) );
 
 	$wp_customize->add_control( 'atticus_finch_twitter', array(
 		'section'           => 'atticus_finch_social_media',
-		'type'              => 'text',
+		'type'              => 'url',
 		'label'             => __( 'Enter Twitter URL', 'atticus-finch'),
 	) );
 
@@ -566,12 +566,12 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	$wp_customize->add_setting( 'atticus_finch_twitter2', array(
 		'type'              => 'theme_mod',
 		'transport'         => 'postMessage',
-		'sanitize_callback'          => 'html',
+		'sanitize_callback' => 'atticus_finch_sanitize_url',
 	) );
 
 	$wp_customize->add_control( 'atticus_finch_twitter2', array(
 		'section'           => 'atticus_finch_social_media',
-		'type'              => 'text',
+		'type'              => 'url',
 		'label'             => __( 'Enter second Twitter URL', 'atticus-finch'),
 	) );
 
@@ -579,12 +579,12 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	$wp_customize->add_setting( 'atticus_finch_facebook', array(
 		'type'              => 'theme_mod',
 		'transport'         => 'postMessage',
-		'sanitize_callback'          => 'html',
+		'sanitize_callback' => 'atticus_finch_sanitize_url',
 	) );
 
 	$wp_customize->add_control( 'atticus_finch_facebook', array(
 		'section'           => 'atticus_finch_social_media',
-		'type'              => 'text',
+		'type'              => 'url',
 		'label'             => __( 'Enter Facebook URL', 'atticus-finch'),
 	) );
 
@@ -592,7 +592,7 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	$wp_customize->add_setting( 'atticus_finch_instagram', array(
 		'type'              => 'theme_mod',
 		'transport'         => 'postMessage',
-		'sanitize_callback'          => 'html',
+		'sanitize_callback' => 'atticus_finch_sanitize_url',
 	) );
 
 	$wp_customize->add_control( 'atticus_finch_instagram', array(
@@ -605,12 +605,12 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	$wp_customize->add_setting( 'atticus_finch_youtube', array(
 		'type'              => 'theme_mod',
 		'transport'         => 'postMessage',
-		'sanitize_callback'          => 'html',
+		'sanitize_callback' => 'atticus_finch_sanitize_url',
 	) );
 
 	$wp_customize->add_control( 'atticus_finch_youtube', array(
 		'section'           => 'atticus_finch_social_media',
-		'type'              => 'text',
+		'type'              => 'url',
 		'label'             => __( 'Enter YouTube URL', 'atticus-finch'),
 	) );
 
@@ -618,12 +618,12 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	$wp_customize->add_setting( 'atticus_finch_pinterest', array(
 		'type'              => 'theme_mod',
 		'transport'         => 'postMessage',
-		'sanitize_callback'          => 'html',
+		'sanitize_callback' => 'atticus_finch_sanitize_url',
 	) );
 
 	$wp_customize->add_control( 'atticus_finch_pinterest', array(
 		'section'           => 'atticus_finch_social_media',
-		'type'              => 'text',
+		'type'              => 'url',
 		'label'             => __( 'Enter Pinterest Profile URL', 'atticus-finch'),
 	) );
 
@@ -631,12 +631,12 @@ $default_copyright = '<a rel="license" href="http://creativecommons.org/licenses
 	$wp_customize->add_setting( 'atticus_finch_amazon', array(
 		'type'              => 'theme_mod',
 		'transport'         => 'postMessage',
-		'sanitize_callback'          => 'html',
+		'sanitize_callback' => 'atticus_finch_sanitize_url',
 	) );
 
 	$wp_customize->add_control( 'atticus_finch_amazon', array(
 		'section'           => 'atticus_finch_social_media',
-		'type'              => 'text',
+		'type'              => 'url',
 		'label'             => __( 'Enter Amazon Wish List URL', 'atticus-finch'),
 	) );
 
@@ -948,6 +948,10 @@ function atticus_finch_sanitize_html( $input ) {
 			'https' => array(),
 		)
 	);
+}
+
+function atticus_finch_sanitize_url( $url ) {
+	return esc_url_raw( $url );
 }
 
 function atticus_finch_sanitize_mobile_menu_type( $input ){

@@ -2,7 +2,8 @@ body > header,
 body > footer,
 #sidebar,
 a.post-edit-link,
-#post-series {
+#post-series,
+#respond {
 	display: none;
 }
 
@@ -13,9 +14,18 @@ body,
 .post,
 .page,
 .post-content {
-	max-width: 100%;
+	width: 100%;
 	padding: 0;
 	margin: 0;
+}
+
+.post li {
+	margin-bottom: 6pt;
+}
+
+.post-content a {
+	text-decoration: none;
+	border-bottom: solid 1pt #99f;
 }
 
 #content {
@@ -63,3 +73,6 @@ body,
 	display: block;
 	margin: 0 auto;
 }
+
+.post-content a:after {
+	content:" [URL: " attr(href) "] ";
