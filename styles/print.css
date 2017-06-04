@@ -17,6 +17,7 @@ body,
 	width: 100%;
 	padding: 0;
 	margin: 0;
+	color: #000;
 }
 
 .post li {
@@ -76,3 +77,14 @@ body,
 
 .post-content a:after {
 	content:" [URL: " attr(href) "] ";
+}
+
+/* Remove borders on image links */
+.post-content a[href$=jpg]:after,
+.post-content  a[href$=jpeg]:after,
+.post-content  a[href$=jpe]:after,
+.post-content  a[href$=png]:after,
+.post-content  a[href$=gif]:after {
+	content:"\A[Image location: " attr(href) "] ";
+}
+

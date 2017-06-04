@@ -3,7 +3,7 @@ Contributors: kjodle
 Tags: black, gray, white, fixed-layout, two-columns, left-sidebar, custom-menu, featured-images, post-formats, theme-options, threaded-comments, translation-ready
 Requires at least: 4.1
 Tested up to: 4.7.5
-Stable tag: 0.7
+Stable tag: 0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,7 +42,8 @@ IM Fell English Font, Copyright 2016 Igino Marini
 License: SIL (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 Source: https://www.google.com/fonts/specimen/IM+Fell+English
 
-jQuery Plugin Responsive Drop Down
-Source: https://github.com/cssmenumaker/jQuery-Plugin-Responsive-Drop-Down
+Superfish jQuery Menu Plugin, Copyright 2015 Joel Birch
+License: MIT (http://opensource.org/licenses/mit-license.html)
+Source: http://users.tpg.com.au/j_birch/plugins/superfish/
 
 == Notes ==

@@ -4,7 +4,7 @@ Theme URI: http://wiki.kjodle.net/Category:Atticus_Finch_Theme
 Author: kjodle
 Author URI: http://d12webdesign.com/
 Description: Description
-Version: 0.8.2
+Version: 0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, left-sidebar, custom-menu, featured-images, post-formats, theme-options, threaded-comments, translation-ready
@@ -222,6 +222,16 @@ a.top-button {
 	border-color: #eee;
 	color: #3437e5;
 }
+
+/* Remove borders on image links */
+.post-content a[href$=jpg],
+.post-content  a[href$=jpeg],
+.post-content  a[href$=jpe],
+.post-content  a[href$=png],
+.post-content  a[href$=gif] {
+	text-decoration: none;
+	border: 0 none;
+	}
 
 .post-title {
 	font-size: 24px;

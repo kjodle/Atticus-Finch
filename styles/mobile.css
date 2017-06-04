@@ -6,7 +6,7 @@
 
 body {
 		background: #fff;
-		color: brown;
+		color: #333;
 }
 
 body > header {
@@ -89,6 +89,10 @@ body > footer {
 	width: auto;
 	text-align: center;
 	margin-bottom: 0;
+}
+
+blockquote {
+	margin: 0 1em;
 }
 
 
