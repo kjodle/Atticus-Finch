@@ -481,7 +481,7 @@
   right: 0;
 }
 #belowheadermenu li:hover > ul > li {
-	height: 35px;
+	height: 38px;
 }
 #belowheadermenu ul ul ul {
   margin-left: 100%;
@@ -494,12 +494,14 @@
 #belowheadermenu ul ul li a {
   border-bottom: 1px solid rgba(150, 150, 150, 0.15);
   padding: 11px 15px;
-  width: 170px;
+  min-width: 170px;
   font-size: 1.1em;
   text-decoration: none;
   color: #dddddd;
   font-weight: 400;
   background: #333333;
+	display: inline-block;
+	white-space: nowrap;
 }
 #belowheadermenu ul ul li:last-child > a,
 #belowheadermenu ul ul li.last-item > a {
