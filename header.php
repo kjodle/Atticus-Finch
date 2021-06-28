@@ -15,7 +15,8 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<?php atticus_finch_custom_css_head(); ?>
+<!-- Commented out on 2021.06.27 -->
+<?php // atticus_finch_custom_css_head(); ?>
 
 <?php wp_head(); ?>
 </head>
@@ -49,7 +50,7 @@
 				echo '<h1>' . get_option( 'blogname' ) . '</h1>';
 			} else { ?>
 				<h2><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h2>
-			<?php 
+			<?php
 				}
 			?>
 		</div><!-- end #site-title -->
@@ -78,7 +79,8 @@
 
 <?php do_action( 'atticus_finch_before_primary_menu' ); ?>
 
-<?php $walker = new Atticus_Finch_Menu_With_Description; ?>
+<!-- Commented out on 2021.06.27 -->
+<?php // $walker = new Atticus_Finch_Menu_With_Description; ?>
 
 	<nav id="primary-menu">
 		<?php
@@ -91,7 +93,7 @@
 				'container'      => 'div',
 				'container_id'   => 'belowheadermenu',
 				'depth'          => 3,
-				'walker'         => $walker,
+//				'walker'         => $walker,
 				);
 			} else {
 				$array = array(

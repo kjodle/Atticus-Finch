@@ -1,25 +1,25 @@
-* Atticus Finch *
-Contributors: kjodle
-Tags: black, gray, white, fixed-layout, two-columns, left-sidebar, custom-menu, featured-images, post-formats, theme-options, threaded-comments, translation-ready
-Requires at least: 1.0
-Tested up to: 1.2
-Stable tag: 0.9.1
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+# Atticus Finch #
+* Contributors: @kjodle
+* Tags: black, gray, white, fixed-layout, two-columns, left-sidebar, custom-menu, featured-images, post-formats, theme-options, threaded-comments, translation-ready
+* Requires at least: 1.0
+* Tested up to: 1.2
+* ~~Stable tag: 0.9.1~~ (Not sure how this will work under ClassicPress.)
+* License: GPLv2 or later
+* License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-** Description **
+## Description ##
 
 For more information about Atticus Finch please go to http://wiki.kjodle.net/Category:Atticus_Finch_Theme.
 
-As of version 0.10, development is exclusively for [ClassicPress](https://www.classicpress.net/).
+As of version 0.10, development is exclusively for [ClassicPress](https://www.classicpress.net/). :grinning:
 
-** Installation **
+## Installation ##
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in 'Atticus Finch' in the search form and press the 'Enter' key on your keyboard.
-3. Click on the 'Activate' button to use your new theme right away.
+1. Type in 'Atticus Finch' in the search form and press the 'Enter' key on your keyboard.
+1. Click on the 'Activate' button to use your new theme right away.
 
-** Copyright **
+## Copyright ##
 
 Atticus Finch WordPress Theme, Copyright 2016 Kenneth John Odle
 Atticus Finch is distributed under the terms of the GNU GPL
@@ -48,4 +48,4 @@ Superfish jQuery Menu Plugin, Copyright 2015 Joel Birch
 License: MIT (http://opensource.org/licenses/mit-license.html)
 Source: http://users.tpg.com.au/j_birch/plugins/superfish/
 
-** Notes **
+## Notes ##
